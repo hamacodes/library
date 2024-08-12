@@ -22,5 +22,5 @@ const redSkyMourning = new Book("Red Sky Mourning", "Jack Carr", 450, "yes");
 const myLibrary = [theHobbit,savageSon,onlyTheDead,redSkyMourning];
 
 myLibrary.forEach(book => {
-  console.log(book.title);
+  console.log(book.info());
 });
