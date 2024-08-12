@@ -1,14 +1,12 @@
 
-
-
-class Book() {
+class Book {
   constructor(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
   }
-  this.info = function() {
+  info = function() {
     return `${this.title} by ${this.author}, has ${pages} pages, read = ${this.read}`
   }
 }
@@ -18,6 +16,12 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(newBook);
   return myLibrary;
 }
+
+let addBookButton = document.querySelector("#addBook"); 
+addBookButton.addEventListener("click", () => {
+  alert("Add book button clicked");
+});
+
 
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, "no");
 const savageSon = new Book("Savage Son", "Jack Carr", 400, "yes");
