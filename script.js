@@ -11,6 +11,9 @@ class Book {
   }
 }
 
+function createBookCard(book) {
+  
+
 function addBookToLibrary(title, author, pages, read) {
   const newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
@@ -19,7 +22,12 @@ function addBookToLibrary(title, author, pages, read) {
 
 let addBookButton = document.querySelector("#addBook"); 
 addBookButton.addEventListener("click", () => {
-  alert("Add book button clicked");
+  let title = document.querySelector("#title").value;
+  let author = document.querySelector("#author").value;
+  let pages = document.querySelector("#pages").value;
+  let read = document.querySelector("#read").value;
+  addBookToLibrary(title, author, pages, read);
+  alert(myLibrary);
 });
 
 
