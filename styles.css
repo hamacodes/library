@@ -49,7 +49,6 @@ form button:hover {
 }
 
 #library {
-  background-color: purple;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -63,8 +62,10 @@ form button:hover {
   flex-direction: column;
   align-items: left;
   gap: 5px;
-  background-color: lightcoral;
+  background-color: lightgreen;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   padding: 10px;
+  border-radius: 10px;
 }
 .book-card :nth-child(1) {
   font-weight: bold;
