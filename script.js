@@ -32,7 +32,8 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 let addBookButton = document.querySelector("#addBook"); 
-addBookButton.addEventListener("click", () => {
+addBookButton.addEventListener("click", (event) => {
+  event.preventDefault(); // prevent default form submission behavior
   let title = document.querySelector("#title").value;
   let author = document.querySelector("#author").value;
   let pages = document.querySelector("#pages").value;
@@ -42,6 +43,14 @@ addBookButton.addEventListener("click", () => {
   document.querySelector("#library").appendChild(bookCard);
 });
 
+function displayLibrary() {
+  myLibrary.forEach(book => {
+    console.log(book.info());
+    let bookCard = createBookCard(book);
+    document.querySelector("#library").appendChild(bookCard);
+  });
+}
+
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, "no");
 const savageSon = new Book("Savage Son", "Jack Carr", 400, "yes");
 const onlyTheDead = new Book("Only The Dead", "Jack Carr", 350, "yes");
@@ -49,8 +58,4 @@ const redSkyMourning = new Book("Red Sky Mourning", "Jack Carr", 450, "yes");
 
 const myLibrary = [theHobbit,savageSon,onlyTheDead,redSkyMourning];
 
-myLibrary.forEach(book => {
-  console.log(book.info());
-  let bookCard = createBookCard(book);
-  document.querySelector("#library").appendChild(bookCard);
-});
+displayLibrary();
