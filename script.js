@@ -51,6 +51,7 @@ function displayLibrary() {
   });
 }
 
+const hamasJourney = new Book("Hama's Journey", "Hama P.", 123, "no");
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, "no");
 const savageSon = new Book("Savage Son", "Jack Carr", 400, "yes");
 const onlyTheDead = new Book("Only The Dead", "Jack Carr", 350, "yes");
