@@ -22,8 +22,8 @@ function createBookCard(book) {
   <p>Pages: ${book.pages}</p>
   <p>Read: ${book.read}</p>
   <div>
-  <button id="remove">Remove</button>
-  <button id="toggle-read">Read</button>
+  <button id="removeBook">Remove</button>
+  <button id="toggleRead">Read</button>
   </div>
   `;
   return bookCard;
@@ -49,7 +49,25 @@ function toggleReadStatus(index) {
   return myLibrary;
 }
 
+// Remove Book and Toggle Read Status Event Listeners
+document.addEventListener("click", (event) => {
+  if (event.target.id === "removeBook") {
+    const bookCard = event.target.closest(".book-card");
+    const index = parseInt(bookCard.id);
+    removeBookFromLibrary(index);
+    bookCard.remove();
+  }
+});
 
+document.addEventListener("click", (event) => {
+  if (event.target.id === "toggleRead") {
+    const bookCard = event.target.closest(".book-card");
+    const index = parseInt(bookCard.id);
+    toggleReadStatus(index);
+    const book = myLibrary[index];
+    bookCard.querySelector("p:nth-child(4)").textContent = `Read: ${book.read}`;
+  }
+});
 
 let addBookButton = document.querySelector("#addBook"); 
 addBookButton.addEventListener("click", (event) => {
