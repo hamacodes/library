@@ -21,7 +21,7 @@ function createBookCard(book) {
   <p>By: ${book.author}</p>
   <p>Pages: ${book.pages}</p>
   <p>Read: ${book.read}</p>
-  <div>
+  <div class="card-buttons">
   <button id="removeBook">Remove</button>
   <button id="toggleRead">Read</button>
   </div>
