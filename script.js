@@ -21,6 +21,10 @@ function createBookCard(book) {
   <p>By: ${book.author}</p>
   <p>Pages: ${book.pages}</p>
   <p>Read: ${book.read}</p>
+  <div>
+  <button id="remove">Remove</button>
+  <button id="toggle-read">Read</button>
+  </div>
   `;
   return bookCard;
 }
@@ -30,6 +34,22 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(newBook);
   return myLibrary;
 }
+
+function removeBookFromLibrary(index) {
+  myLibrary.splice(index, 1);
+  return myLibrary;
+}
+
+function toggleReadStatus(index) {
+  if (myLibrary[index].read === "yes") {
+    myLibrary[index].read = "no";
+  } else {
+    myLibrary[index].read = "yes";
+  }
+  return myLibrary;
+}
+
+
 
 let addBookButton = document.querySelector("#addBook"); 
 addBookButton.addEventListener("click", (event) => {
@@ -57,6 +77,6 @@ const savageSon = new Book("Savage Son", "Jack Carr", 400, "yes");
 const onlyTheDead = new Book("Only The Dead", "Jack Carr", 350, "yes");
 const redSkyMourning = new Book("Red Sky Mourning", "Jack Carr", 450, "yes");
 
-const myLibrary = [theHobbit,savageSon,onlyTheDead,redSkyMourning];
+const myLibrary = [hamasJourney,theHobbit,savageSon,onlyTheDead,redSkyMourning];
 
 displayLibrary();
