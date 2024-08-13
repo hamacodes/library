@@ -7,7 +7,7 @@ class Book {
     this.read = read;
   }
   info = function() {
-    return `${this.title} by ${this.author}, has ${pages} pages, read = ${this.read}`
+    return `${this.title} by ${this.author}, has ${this.pages} pages, read = ${this.read}`
   }
 }
 
@@ -33,6 +33,8 @@ function createBookCard(book) {
 }
 myLibrary.forEach(book => {
   console.log(book.info());
+  let bookCard = createBookCard(book);
+  document.querySelector("#library").appendChild(bookCard);
 });
 
 function addBookToLibrary(title, author, pages, read) {
